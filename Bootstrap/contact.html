@@ -53,26 +53,46 @@
     <div class="main" style="background-image:url('image1.jpg');">
         <div style="text-align:right;margin-right: 5%;">
             <header><h1>Fill the details below:</h1></header>
-            <form action="#" style="background-color: transparent;" method="POST">
-                First Name: <input type="text"  style="background-color: transparent;"placeholder="enter your first name"><br>
-                Last Name: <input type="text" style="background-color: transparent";placeholder="enter your last name"><br>
-                Gender: <select name="Gender" style="background-color: transparent;"id="">Male
+            <form action="#" style="background-color: transparent;color: cornsilk;" method="">
+                First Name: <input type="text"  style="background-color: transparent;color: cornsilk;"placeholder="enter your first name" id="Fname" required><br>
+                Last Name: <input type="text" style="background-color: transparent; color: cornsilk;";placeholder="enter your last name" id="Lname" required><br>
+                Gender: <select name="Gender" style="background-color: transparent;color: cornsilk;"id="gender" required>Male
                     <option value="#">select</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="others">Other</option>
                 </select><br>
-                E- mail <input type="email" style="background-color: transparent;"placeholder="entrer your email"><br>
-                <textarea name="Query" id="" cols="30" rows="10" style="background-color: transparent;"placeholder="Enter Your Feedback"></textarea> <br><br>
-                <button type="submit" onclick="alert('form submitted')">Submit</button>
+                E- mail <input type="email" style="background-color: transparent;color: cornsilk;"placeholder="entrer your email" id="email1" required><br>
+                <textarea name="Query" id="" cols="30" rows="10" style="background-color: transparent;color: cornsilk;"placeholder="Enter Your Feedback"></textarea> <br><br>
+                <button class="btn btn-secondary" type="submit" onclick="getData();">Submit</button>
             </form>
           </div>
-          <br> <br>
+          <br> <br><br><br><br>
     </div>
      <footer>
         <h4> Buy Some Guitar </h4>
       </footer>
 </body>
+<script>
+  function getData() {
+      let fname=document.getElementById("Fname").value;
+      let lname=document.getElementById("Lname").value;
+      let email=document.getElementById("email1").value;
+      let gender=document.getElementById("gender").value;
+
+  if(fname==""){
+      alert("fill first name");
+  }
+  else if(lname==""){
+      alert("Fill last name");
+  }else if(email==""){
+      alert("fill email");
+  }
+  else{
+      alert(`your email is ${email}\n your first name is ${fname}\n your last name is ${lname} `);
+  }
+}
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
